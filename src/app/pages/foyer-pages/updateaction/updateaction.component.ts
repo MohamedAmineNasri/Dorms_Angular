@@ -7,7 +7,7 @@ import { FoyerService } from 'src/app/services/foyer.service';
 @Component({
   selector: 'app-updateaction',
   templateUrl: './updateaction.component.html',
-  styleUrls: ['./updateaction.component.css']
+  styleUrls: ['./updateaction.component.scss']
 })
 export class UpdateactionComponent {
 

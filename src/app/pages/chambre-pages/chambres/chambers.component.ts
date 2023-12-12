@@ -1,56 +1,51 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Universite } from 'src/app/models/universite';
 import {UniversityService} from "../../../services/university.service";
+import {Chambre} from "../../../models/chambre";
+import {ChambreService} from "../../../services/chambre.service";
 
 @Component({
   selector: 'app-universities',
-  templateUrl: './universities.component.html',
-  styleUrls: ['./universities.component.scss']
+  templateUrl: './chambers.component.html',
+  styleUrls: ['./chambers.component.scss']
 })
-export class UniversitiesComponent {
-  listUnis : Universite[];
+export class ChambersComponent implements OnInit{
+  listchambre : Chambre[]
 
-  selectedUniversityName: String="";
-  selectedUniversity: Universite;
+  selectedchambsityName:string="t"
+  selectedchambre:Chambre
 
-//current page
+
+
+  constructor( private chambreService:ChambreService){
+
+  }
   p:Number=1;
-
-  constructor(private ac:ActivatedRoute, private uniServ:UniversityService,private router: Router){
-    console.log("custructor");
-  }
-
-
-
   ngOnInit(){
-    this.uniServ.getAllUniversite().subscribe((res:Universite[])=>this.listUnis=res);
-    console.log("initiation ListUserComponent");
+
+    this.chambreService.getAllchambre().subscribe((res:Chambre[])=>this.listchambre=res)
+
+
 
 
   }
 
-  deleteUni(idu: number) {
-    this.uniServ.deleteUniversite(idu).subscribe(() => {
-      this.listUnis = this.listUnis.filter(u => u.idUniversite !== idu);    // Remove the deleted university from the list and refresh
-    });
+  // binded to a delete button in Universities html , no component needed.
+  deletecham(idu : number){
+    this.chambreService.deletechambre(idu).subscribe();
+    console.log(this.listchambre)
+
+    location.reload();
   }
-
-  //databinding : extracting university from the table and fill selecteduni and uni name and use their value in son component (infos)
-  selectUniversity(university: Universite) {
-    this.selectedUniversityName = university.nomUniversite;
-    this.selectedUniversity=university;
+  get_name(id:string){
+    this.chambreService.getbyname(id).subscribe((res:Chambre[])=>this.listchambre=res)
   }
-
-
-  recoverUniversity() {
-    this.uniServ.addUniversite(this.selectedUniversity).subscribe((recoveredUni: Universite) => {
-      this.listUnis.push(recoveredUni);
-      location.reload()
-    });
+  selectUniversity(chambre: Chambre) {
+    this.selectedchambsityName = chambre.name;
+    this.selectedchambre=chambre;
   }
-
 
 
 }

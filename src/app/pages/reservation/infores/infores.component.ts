@@ -5,10 +5,10 @@ import {UniversityService} from "../../../services/university.service";
 
 @Component({
   selector: 'app-infos',
-  templateUrl: './infos.component.html',
-  styleUrls: ['./infos.component.scss']
+  templateUrl: './infores.component.html',
+  styleUrls: ['./infores.component.scss']
 })
-export class InfosComponent {
+export class InforesComponent {
 
   constructor(private ac: ActivatedRoute,private us:UniversityService){
   }

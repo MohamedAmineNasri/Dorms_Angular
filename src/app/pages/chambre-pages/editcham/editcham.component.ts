@@ -2,23 +2,24 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Universite } from 'src/app/models/universite';
 import {UniversityService} from "../../../services/university.service";
+import Swal from "sweetalert2";
+import {Chambre} from "../../../models/chambre";
+import {ChambreService} from "../../../services/chambre.service";
 
 
 
 @Component({
   selector: 'app-edituni',
-  templateUrl: './edituni.component.html',
-  styleUrls: ['./edituni.component.css']
+  templateUrl: './editcham.component.html',
+  styleUrls: ['./editcham.component.css']
 })
-export class EdituniComponent {
+export class EditchamComponent {chambre : Chambre =new Chambre();
+  id : number;
 
-  uniSelected : Universite =new Universite();
-  id! : number;
-
-  constructor(private ac: ActivatedRoute,private us:UniversityService){
+  constructor(private ac: ActivatedRoute,private us:ChambreService){
   }
   ngOnInit(){
-    // this.us.getUniversite(this.university.idUniversite).subscribe(res=>this.university=res);
+    // this.us.getUniversite(this.chambre.idUniversite).subscribe(res=>this.chambre=res);
     const idParam = this.ac.snapshot.paramMap.get('id');
 
     if (idParam !== null) {
@@ -30,15 +31,22 @@ export class EdituniComponent {
     }
   }
   getUniversityById(id: number): void {
-    this.us.getUniversite(id).subscribe((universityS) => {
-      this.uniSelected = universityS;
+    this.us.getchambre(id).subscribe((chambres) => {
+      this.chambre = chambres;
     });
   }
 
-  editUniversity(){
-    console.log("pressed on add")
-    this.us.updateUniversite(this.uniSelected).subscribe();
-    alert("u modified a university !")
-    location.assign("./universities")
+  editChambre(){
+    console.log("pressed on update ")
+    this.us.updatechambre(this.chambre).subscribe();
+    this.us.addchambre(this.chambre).subscribe();
+    Swal.fire({
+      position: "top",
+      icon: "success",
+      title: "chamber has been updated",
+      showConfirmButton: true,
+      timer: 1500
+    });
+    setTimeout(()=>{ location.assign("http://localhost:4200/getallcham") }, 2000)
   }
 }

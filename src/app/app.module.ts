@@ -18,6 +18,7 @@ import { EdituniComponent } from './pages/university-pages/edituni/edituni.compo
 import { HighlightDirective } from './directives/highlight.directive';
 import { InfosComponent } from './pages/university-pages/infos/infos.component';
 import { UniversitiesComponent } from './pages/university-pages/universities/universities.component';
+import { UpdatebuttonComponent } from './pages/chambre-pages/updatebutton/updatebutton.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { UniversitiesComponent } from './pages/university-pages/universities/uni
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
+    UpdatebuttonComponent,
 
 
 

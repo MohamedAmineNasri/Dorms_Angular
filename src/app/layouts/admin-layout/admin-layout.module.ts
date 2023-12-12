@@ -25,6 +25,15 @@ import {EdituniComponent} from "../../pages/university-pages/edituni/edituni.com
 import {InfosComponent} from "../../pages/university-pages/infos/infos.component";
 import {UniversitiesComponent} from "../../pages/university-pages/universities/universities.component";
 import {NgxPaginationModule} from "ngx-pagination";
+import {AddChamComponent} from "../../pages/chambre-pages/add-cham/add-cham.component";
+import {EditchamComponent} from "../../pages/chambre-pages/editcham/editcham.component";
+import {InfoschamComponent} from "../../pages/chambre-pages/infoscham/infoscham.component";
+import {ChambersComponent} from "../../pages/chambre-pages/chambres/chambers.component";
+import {ReservationsComponent} from "../../pages/reservation/reservations/reservations.component";
+import {AddResComponent} from "../../pages/reservation/add-res/add-res.component";
+import {EditresComponent} from "../../pages/reservation/editres/editres.component";
+import {InforesComponent} from "../../pages/reservation/infores/infores.component";
+import {ZoomoutDirective} from "../../directives/zoomout.directive";
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -47,8 +56,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     CapaciteRangeComponent,
     AddFoyerComponent,
     ListFoyerComponent,UpdateactionComponent,
-    AddUniComponent,HighlightDirective, ZoomhoverDirective,EdituniComponent, InfosComponent, UniversitiesComponent,
-  ]
+    AddUniComponent,HighlightDirective, ZoomhoverDirective,EdituniComponent, InfosComponent, UniversitiesComponent,AddChamComponent,EditchamComponent,InfoschamComponent,ChambersComponent
+,ReservationsComponent,  AddResComponent,EditresComponent,InforesComponent,ZoomoutDirective]
 })
 
 export class AdminLayoutModule {}

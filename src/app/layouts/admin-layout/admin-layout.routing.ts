@@ -17,6 +17,17 @@ import {EdituniComponent} from "../../pages/university-pages/edituni/edituni.com
 import {UniversitiesComponent} from "../../pages/university-pages/universities/universities.component";
 import {InfosComponent} from "../../pages/university-pages/infos/infos.component";
 
+import {AddResComponent} from "../../pages/reservation/add-res/add-res.component";
+import {EditresComponent} from "../../pages/reservation/editres/editres.component";
+import {ReservationsComponent} from "../../pages/reservation/reservations/reservations.component";
+import {InforesComponent} from "../../pages/reservation/infores/infores.component";
+
+import {InfoschamComponent} from "../../pages/chambre-pages/infoscham/infoscham.component";
+import {AddChamComponent} from "../../pages/chambre-pages/add-cham/add-cham.component";
+import {EditchamComponent} from "../../pages/chambre-pages/editcham/editcham.component";
+import {ChambersComponent} from "../../pages/chambre-pages/chambres/chambers.component";
+
+
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -30,8 +41,18 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'foyers',           component: ListFoyerComponent },
     { path: 'updateaction' , component: UpdateactionComponent},
     { path: 'universities',           component: UniversitiesComponent },
-   { path: 'info',           component: InfosComponent },
-    { path: 'addUni',           component: AddUniComponent },
-    { path: 'editUni/:id',           component: EdituniComponent }
+    { path: 'info',           component: InfosComponent },
+    { path: 'addUni' , component: AddUniComponent },
+    { path: 'editUni/:id',           component: EdituniComponent },
+    { path: 'reservation',component: ReservationsComponent },
+    {path:'infores' , component:InforesComponent},
+    {path:'addres',component:AddResComponent},
+    {path:'editres/:id',component:EditresComponent},
+    {path:'infocham' , component:InfoschamComponent},
+    {path:'addcham',component:AddChamComponent},
+    {path:'editcham/:id',component:EditchamComponent},
+    {path:'getallcham',component:ChambersComponent},
+
+
 ];
 

@@ -7,13 +7,13 @@ import {UniversityService} from "../../../services/university.service";
 
 @Component({
   selector: 'app-edituni',
-  templateUrl: './edituni.component.html',
-  styleUrls: ['./edituni.component.css']
+  templateUrl: './editres.component.html',
+  styleUrls: ['./editres.component.css']
 })
-export class EdituniComponent {
+export class EditresComponent {
 
   uniSelected : Universite =new Universite();
-  id! : number;
+  id! : number ;
 
   constructor(private ac: ActivatedRoute,private us:UniversityService){
   }

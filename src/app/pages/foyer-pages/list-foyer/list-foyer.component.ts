@@ -7,7 +7,7 @@ import { Foyer } from 'src/app/Models/Foyer';
 @Component({
   selector: 'app-list-foyer',
   templateUrl: './list-foyer.component.html',
-  styleUrls: ['./list-foyer.component.css']
+  styleUrls: ['./list-foyer.component.scss']
 })
 export class ListFoyerComponent {
   foyers: Foyer[] = [];

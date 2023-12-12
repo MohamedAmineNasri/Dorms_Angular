@@ -12,7 +12,7 @@
                     <div class="col">
                         <div class="card shadow">
                             <div class="card-header border-0">
-                                <h3 class="mb-0">Universities</h3>
+                                <h3 class="mb-0">chambres</h3>
                             </div>
                             <div class="table-responsive">
                                 <table class="table align-items-center table-flush">
@@ -20,39 +20,33 @@
                                     <tr  >
 
                                         <th scope="col">Name</th>
-                                        <th scope="col">Location</th>
-                                        <th scope="col">foundingDate</th>
-                                        <th scope="col">CampusSize</th>
-                                        <th scope="col">Ranking</th>
-                                        <th scope="col">Actions</th>
+                                        <th scope="col">Numero chambre</th>
+                                        <th scope="col">Type chambre</th>
+                                        <th scope="col">Option</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr *ngFor="let u of listUnis | paginate: { itemsPerPage: 6, currentPage: p }">
+                                    <tr *ngFor="let u of listchambre | paginate: { itemsPerPage: 6, currentPage: p }">
                                         <td scope="row">
 
                                             <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
                                                 <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg" appZoomhover>
                                             </a>
                                             <div class="media-body" >
-                                                <span class="mb-0 text-sm" >{{u.nomUniversite}}</span>
+                                                <span class="mb-0 text-sm" >{{u.name}}</span>
                                             </div>
 
                                         </td>
                                         <td appZoomhover>
-                                            {{u.adresse}}
+                                            {{u.numeroChambre}}
                                         </td>
                                         <td appZoomhover >
                     <span class="badge badge-dot mr-4">
-                      <i class="bg-warning"></i> {{u.foundingDate}}
+                      <i class="bg-warning"></i>{{u.typeC}}
                     </span>
                                         </td>
-                                        <td appZoomhover>
-                                            {{u.ranking}}
-                                        </td>
-                                        <td appZoomhover>
-                                            {{u.campusSize}}
-                                        </td>
+
                                         <td  >
                                             <div ngbDropdown >
                                                 <div ngbDropdown   placement="top-right" >
@@ -60,8 +54,8 @@
                                                         <i class="fas fa-ellipsis-v"></i>
                                                     </a>
                                                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                                        <a class="dropdown-item" [routerLink]="['../editUni', u.idUniversite]" appZoomhover>Edit</a>
-                                                        <a class="dropdown-item" (click)="deleteUni(u.idUniversite) "(click)="selectUniversity(u)" appZoomhover>Delete</a>
+                                                        <a class="dropdown-item" [routerLink]="['../editcham', u.idChambre]" appZoomhover>Edit</a>
+                                                        <a class="dropdown-item" (click)="deletecham(u.idChambre) "(click)="selectUniversity(u)" appZoomhover>Delete</a>
 
                                                     </div>
                                                 </div>
@@ -72,7 +66,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+<!--                            <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
 
                         </div>
                     </div>
@@ -81,7 +75,7 @@
                 <!-- Dark table -->
 
                 <br>
-                <app-infos (undo)="recoverUniversity()" [universityName]="selectedUniversityName" [university]="selectedUniversity"></app-infos>
+
+<!--                <app-infoscham (undo)="recoverUniversity()" [universityName]="selectedchambsityName" [university]="selectedchambre"></app-infoscham>-->
             </div>
         </div>
-

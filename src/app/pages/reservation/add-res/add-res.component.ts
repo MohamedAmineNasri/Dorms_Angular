@@ -1,30 +1,31 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Universite } from 'src/app/models/universite';
+import { Reservation } from 'src/app/models/reservation';
 import {UniversityService} from "../../../services/university.service";
+import {ReservationService} from "../../../services/reservation.service";
+import {createLogErrorHandler} from "@angular/compiler-cli/ngcc/src/execution/tasks/completion";
 
 @Component({
   selector: 'app-add-uni',
-  templateUrl: './add-uni.component.html',
-  styleUrls: ['./add-uni.component.css']
+  templateUrl: './add-res.component.html',
+  styleUrls: ['./add-res.component.css']
 
 })
-export class AddUniComponent {
-  university :Universite =new Universite();
+export class AddResComponent {
 
+  reservation : Reservation = new Reservation();
 
-
-
-  constructor(private ac: ActivatedRoute,private us:UniversityService){
+  constructor(private ac: ActivatedRoute,private ur:ReservationService){
   }
   ngOnInit(){
 
   }
   addUniversity(){
-    console.log("pressed on add")
-    this.us.addUniversite(this.university).subscribe();
-    alert("u added a university !")
-    location.assign("./universities")
+    console.log(this.reservation);
+
+    this.ur.addReservation(this.reservation).subscribe();
+    //alert("u added a reservation !")
+    //location.assign("./reservation")
 
   }
   test(err: any){

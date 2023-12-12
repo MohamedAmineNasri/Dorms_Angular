@@ -6,10 +6,10 @@ import {UniversityService} from "../../../services/university.service";
 
 @Component({
   selector: 'app-universities',
-  templateUrl: './universities.component.html',
-  styleUrls: ['./universities.component.scss']
+  templateUrl: './reservations.component.html',
+  styleUrls: ['./reservations.component.scss']
 })
-export class UniversitiesComponent {
+export class ReservationsComponent {
   listUnis : Universite[];
 
   selectedUniversityName: String="";
