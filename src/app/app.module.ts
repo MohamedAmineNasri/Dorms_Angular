@@ -13,6 +13,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import {JwtModule} from "@auth0/angular-jwt";
+import { ZoomhoverDirective } from './directives/zoomhover.directive';
+import { EdituniComponent } from './pages/university-pages/edituni/edituni.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { InfosComponent } from './pages/university-pages/infos/infos.component';
+import { UniversitiesComponent } from './pages/university-pages/universities/universities.component';
 
 
 @NgModule({
@@ -39,6 +44,11 @@ import {JwtModule} from "@auth0/angular-jwt";
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
+
+
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

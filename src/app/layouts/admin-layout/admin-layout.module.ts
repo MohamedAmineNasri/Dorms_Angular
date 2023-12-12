@@ -28,7 +28,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserProfileComponent,
     TablesComponent,
     IconsComponent,
-    MapsComponent
+    MapsComponent,UpdateFoyerComponent ,
+    CapaciteRangeComponent,
+    AddFoyerComponent,
+    ListFoyerComponent,UpdateactionComponent,
+    AddUniComponent,HighlightDirective, ZoomhoverDirective,EdituniComponent, InfosComponent, UniversitiesComponent,
   ]
 })
 
