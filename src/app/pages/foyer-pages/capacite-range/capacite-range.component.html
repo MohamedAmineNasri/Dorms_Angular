@@ -1,0 +1,60 @@
+<div class="container" class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form (ngSubmit)="fetchFoyersByCapaciteRange()" #capaciteRangeForm="ngForm">
+                <div class="formbold-form-title">
+                    <label class="formbold-form-label">Minimum Capacite:</label>
+                    <input class="formbold-form-input" type="number" id="minCapacite" name="minCapacite" [(ngModel)]="minCapacite" required>
+                </div>
+                <br>
+                <div *ngIf="capaciteRangeForm.controls['minCapacite'].invalid" class="ng-invalid">
+                    <div *ngIf="capaciteRangeForm.controls['minCapacite'].errors['required']">
+                        le champs est vide
+                    </div>
+                </div>
+                <br>
+
+                <div class="formbold-form-title">
+                    <label class="formbold-form-label">Maximum Capacite:</label>
+                    <input class="formbold-form-input" type="number" id="maxCapacite" name="maxCapacite" [(ngModel)]="maxCapacite" required>
+                </div>
+                <br>
+                <div *ngIf="capaciteRangeForm.controls['maxCapacite'].invalid" class="ng-invalid">
+                    <div *ngIf="capaciteRangeForm.controls['maxCapacite'].errors['required']">
+                        le champs est vide
+                    </div>
+                </div>
+                <br>
+
+                <button class="formbold-btn" type="submit" [disabled]="capaciteRangeForm.invalid">Fetch Foyers</button>
+            </form>
+        </div>
+        <!-- Display the list of foyers -->
+
+        <div *ngIf="foyers">
+
+            <div class="formbold-main-wrapper">
+                <div class="card shadow">
+                    <div class="card-header border-0">
+                        <h3 class="mb-0">Foyers</h3>
+                    </div>
+                    <table class="table align-items-center table-flush">
+                        <thead>
+                        <tr>
+                            <th scope="col">Nom Foyer</th>
+                            <th scope="col">Capacite</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let foyer of foyers" appHighlight [highlightColor]="'yellow'" >
+
+                            <td >{{ foyer.nomFoyer }}</td>
+                            <td>{{ foyer.capaciteFoyer }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>

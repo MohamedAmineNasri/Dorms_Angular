@@ -1,0 +1,87 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8 ">
+    <div class="container-fluid">
+        <div class="header-body">
+
+            <!-- Page content -->
+            <div class="container-fluid mt--7">
+                <!-- Table -->
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow">
+                            <div class="card-header border-0">
+                                <h3 class="mb-0">Universities</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                    <tr  >
+
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">foundingDate</th>
+                                        <th scope="col">CampusSize</th>
+                                        <th scope="col">Ranking</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr *ngFor="let u of listUnis | paginate: { itemsPerPage: 6, currentPage: p }">
+                                        <td scope="row">
+
+                                            <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+                                                <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg" appZoomhover>
+                                            </a>
+                                            <div class="media-body" >
+                                                <span class="mb-0 text-sm" >{{u.nomUniversite}}</span>
+                                            </div>
+
+                                        </td>
+                                        <td appZoomhover>
+                                            {{u.adresse}}
+                                        </td>
+                                        <td appZoomhover >
+                    <span class="badge badge-dot mr-4">
+                      <i class="bg-warning"></i> {{u.foundingDate}}
+                    </span>
+                                        </td>
+                                        <td appZoomhover>
+                                            {{u.ranking}}
+                                        </td>
+                                        <td appZoomhover>
+                                            {{u.campusSize}}
+                                        </td>
+                                        <td  >
+                                            <div ngbDropdown >
+                                                <div ngbDropdown   placement="top-right" >
+                                                    <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </a>
+                                                    <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                                                        <a class="dropdown-item" [routerLink]="['../editUni', u.idUniversite]" appZoomhover>Edit</a>
+                                                        <a class="dropdown-item" (click)="deleteUni(u.idUniversite) "(click)="selectUniversity(u)" appZoomhover>Delete</a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- Dark table -->
+
+                <br>
+                <app-infos (undo)="recoverUniversity()" [universityName]="selectedUniversityName" [university]="selectedUniversity"></app-infos>
+            </div>
+        </div>
+

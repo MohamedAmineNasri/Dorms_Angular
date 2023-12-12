@@ -1,0 +1,34 @@
+<div class="container" class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form [formGroup]="foyerForm" (ngSubmit)="creerFoyer()">
+                <div class="formbold-form-title">
+                    <h2 class="">Add Foyer</h2>
+                </div>
+                <div class="formbold-mb-3">
+                    <label class="formbold-form-label">Nom du Foyer:</label>
+                    <input class="formbold-form-input" type="text" formControlName="nomFoyer" pattern="[a-zA-Z]*">
+                    <div *ngIf="foyerForm.get('nomFoyer').hasError('required') ">
+                        Veuillez remplir ce champ.
+                    </div>
+                </div>
+                <br>
+                <div class="formbold-mb-3">
+                    <label class="formbold-form-label">Capacité du Foyer:</label>
+                    <input class="formbold-form-input" type="number" formControlName="capaciteFoyer">
+                    <div *ngIf="foyerForm.get('capaciteFoyer').hasError('required') ">
+                        Veuillez remplir ce champ.
+                    </div>
+                    <div *ngIf="foyerForm.get('capaciteFoyer').hasError('min')">
+                        La capacité doit être d'au moins 50.
+                    </div>
+                </div>
+                <br>
+
+                <!-- Other input fields can be added as needed -->
+
+                <button class="formbold-btn" [disabled]="foyerForm.invalid">Ajouter le Foyer</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container" class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper mt-4">
+            <form #updateForm="ngForm" >
+                <div class="formbold-form-title">
+                    <h2 class="">Update Foyer</h2>
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label class="formbold-form-label">Nom du Foyer:</label>
+                    <input type="text" class="formbold-form-input" id="nomFoyer" name="nomFoyer" [(ngModel)]="foyer.nomFoyer" pattern="[a-zA-Z]*" required>
+                    <div *ngIf="updateForm.controls['nomFoyer'].invalid && updateForm.controls['nomFoyer'].touched">
+                        <div *ngIf="updateForm.controls['nomFoyer'].hasError('required')">Veuillez remplir ce champ.</div>
+                    </div>
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label class="formbold-form-label">Capacité du Foyer:</label>
+                    <input type="number" class="formbold-form-input" id="capaciteFoyer" name="capaciteFoyer" [(ngModel)]="foyer.capaciteFoyer" required>
+                    <div *ngIf="updateForm.controls['capaciteFoyer'].invalid && updateForm.controls['capaciteFoyer'].touched">
+                        <div *ngIf="updateForm.controls['capaciteFoyer'].hasError('required')">Veuillez remplir ce champ.</div>
+                    </div>
+                </div>
+                <app-updateaction (update)="updateFoyer()" [idf]="foyer.idFoyer"  [nomf]="foyer.nomFoyer" [capacite]="foyer.capaciteFoyer"></app-updateaction>
+                <!-- <button type="submit" class="btn btn-danger" [disabled]="updateForm.invalid">Update</button> -->
+            </form>
+        </div>
+    </div>
+</div>
