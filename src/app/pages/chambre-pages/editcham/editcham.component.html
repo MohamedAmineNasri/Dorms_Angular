@@ -41,13 +41,13 @@
 
                 <!-- --------------------------------csize and rank-->
                 <div class="formbold-input-flex" >
-                    <div>
-                        <label  class="formbold-form-label">Compus Size</label>
-                        <input class="formbold-form-input" name="size" type="number" [(ngModel)]="chambre.numeroChambre" #size="ngModel" pattern="^[0-9]*$" required/>
-                    </div>
+<!--                    <div>-->
+<!--                        <label  class="formbold-form-label">Compus Size</label>-->
+<!--                        <input class="formbold-form-input" name="size" type="number" [(ngModel)]="chambre.numeroChambre" #size="ngModel" pattern="^[0-9]*$" required/>-->
+<!--                    </div>-->
                     <div>
                         <label class="formbold-form-label">
-                            Ranking
+                            Num chombre
                         </label>
                         <input class="formbold-form-input" name="ran" type="number" [(ngModel)]="chambre.numeroChambre" #ran="ngModel" pattern="^[0-9]*$"  required/>
                     </div>
@@ -72,8 +72,8 @@
                     Triple
                 </label>
 <br><br><br><br>
-                <button class="formbold-btn"  [disabled]="fo.invalid">save changes</button>
-<!--                <app-updatebutton (update)="editChambre()" [idc]="chambre.idChambre"  [nomf]="chambre.name" [typec]="chambre.numeroChambre">update me </app-updatebutton>-->
+<!--                <button class="formbold-btn"  [disabled]="fo.invalid">save changes</button>-->
+                <app-updatebutton (update)="editChambre()" [idc]="chambre.idChambre"  [nomc]="chambre.name" [typec]="chambre.numeroChambre "[type]="chambre.typeC">update me </app-updatebutton>
 
             </form>
         </div>

@@ -19,7 +19,7 @@
                                     <thead class="thead-light">
                                     <tr  >
 
-                                        <th scope="col">Name</th>
+                                        <th scope="col" appZoomout >Name</th>
                                         <th scope="col">Numero chambre</th>
                                         <th scope="col">Type chambre</th>
                                         <th scope="col">Option</th>
@@ -27,7 +27,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr *ngFor="let u of listchambre | paginate: { itemsPerPage: 6, currentPage: p }">
+                                    <tr *ngFor="let u of listchambre ">
+                                    <!--| paginate: { itemsPerPage: 6, currentPage: p }">-->
                                         <td scope="row">
 
                                             <a href="javascript:void(0)" class="avatar rounded-circle mr-3">

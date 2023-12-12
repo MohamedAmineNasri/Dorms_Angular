@@ -49,4 +49,5 @@ export class EditchamComponent {chambre : Chambre =new Chambre();
     });
     setTimeout(()=>{ location.assign("http://localhost:4200/getallcham") }, 2000)
   }
+
 }

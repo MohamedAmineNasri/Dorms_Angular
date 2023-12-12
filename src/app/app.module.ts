@@ -13,12 +13,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import {JwtModule} from "@auth0/angular-jwt";
-import { ZoomhoverDirective } from './directives/zoomhover.directive';
-import { EdituniComponent } from './pages/university-pages/edituni/edituni.component';
-import { HighlightDirective } from './directives/highlight.directive';
-import { InfosComponent } from './pages/university-pages/infos/infos.component';
-import { UniversitiesComponent } from './pages/university-pages/universities/universities.component';
-import { UpdatebuttonComponent } from './pages/chambre-pages/updatebutton/updatebutton.component';
 
 
 @NgModule({
@@ -45,13 +39,13 @@ import { UpdatebuttonComponent } from './pages/chambre-pages/updatebutton/update
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    UpdatebuttonComponent,
+    // UpdatebuttonComponent,
 
 
   ],
   providers: [],
   exports: [
-    UpdatebuttonComponent
+    // UpdatebuttonComponent
   ],
   bootstrap: [AppComponent]
 })

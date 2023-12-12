@@ -24,17 +24,12 @@ import {ZoomhoverDirective} from "../../directives/zoomhover.directive";
 import {EdituniComponent} from "../../pages/university-pages/edituni/edituni.component";
 import {InfosComponent} from "../../pages/university-pages/infos/infos.component";
 import {UniversitiesComponent} from "../../pages/university-pages/universities/universities.component";
-import {NgxPaginationModule} from "ngx-pagination";
 import {AddChamComponent} from "../../pages/chambre-pages/add-cham/add-cham.component";
 import {EditchamComponent} from "../../pages/chambre-pages/editcham/editcham.component";
-import {InfoschamComponent} from "../../pages/chambre-pages/infoscham/infoscham.component";
+
+import {NgxPaginationModule} from "ngx-pagination";
+import {UpdatebuttonComponent} from "../../pages/chambre-pages/updatebutton/updatebutton.component";
 import {ChambersComponent} from "../../pages/chambre-pages/chambres/chambers.component";
-import {ReservationsComponent} from "../../pages/reservation/reservations/reservations.component";
-import {AddResComponent} from "../../pages/reservation/add-res/add-res.component";
-import {EditresComponent} from "../../pages/reservation/editres/editres.component";
-import {InforesComponent} from "../../pages/reservation/infores/infores.component";
-import {ZoomoutDirective} from "../../directives/zoomout.directive";
-import {AppModule} from "../../app.module";
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -46,8 +41,7 @@ import {AppModule} from "../../app.module";
     NgbModule,
     ClipboardModule,
     ReactiveFormsModule,
-    NgxPaginationModule,
-    AppModule
+    NgxPaginationModule
   ],
   declarations: [
     DashboardComponent,
@@ -58,8 +52,8 @@ import {AppModule} from "../../app.module";
     CapaciteRangeComponent,
     AddFoyerComponent,
     ListFoyerComponent,UpdateactionComponent,
-    AddUniComponent,HighlightDirective, ZoomhoverDirective,EdituniComponent, InfosComponent, UniversitiesComponent,AddChamComponent,EditchamComponent,InfoschamComponent,ChambersComponent
-,ReservationsComponent,  AddResComponent,EditresComponent,InforesComponent,ZoomoutDirective]
+    AddUniComponent,HighlightDirective, ZoomhoverDirective,EdituniComponent, ChambersComponent,InfosComponent, UniversitiesComponent,AddChamComponent,EditchamComponent , UpdatebuttonComponent
+  ]
 })
 
 export class AdminLayoutModule {}
