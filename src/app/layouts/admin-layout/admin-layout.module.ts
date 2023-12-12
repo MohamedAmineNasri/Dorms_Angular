@@ -34,6 +34,7 @@ import {AddResComponent} from "../../pages/reservation/add-res/add-res.component
 import {EditresComponent} from "../../pages/reservation/editres/editres.component";
 import {InforesComponent} from "../../pages/reservation/infores/infores.component";
 import {ZoomoutDirective} from "../../directives/zoomout.directive";
+import {AppModule} from "../../app.module";
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -45,7 +46,8 @@ import {ZoomoutDirective} from "../../directives/zoomout.directive";
     NgbModule,
     ClipboardModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AppModule
   ],
   declarations: [
     DashboardComponent,

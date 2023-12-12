@@ -48,11 +48,11 @@ import { UpdatebuttonComponent } from './pages/chambre-pages/updatebutton/update
     UpdatebuttonComponent,
 
 
-
-
-
   ],
   providers: [],
+  exports: [
+    UpdatebuttonComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
